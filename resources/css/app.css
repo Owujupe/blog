@@ -1,0 +1,436 @@
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+@theme {
+    --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+    --font-serif: 'Playfair Display', ui-serif, Georgia, serif;
+
+    --color-gold: #50ced4;
+    --color-gold-hover: #d4b77d;
+    --color-gold-faint: rgba(205, 172, 105, 0.1);
+    --color-dark-bg: #0a0a0a;
+    --color-dark-secondary: #111111;
+    --color-dark-tertiary: #1c1c1c;
+    --color-surface-card: #121212;
+    --color-surface-border: rgba(255, 255, 255, 0.08);
+    --color-surface-border-active: rgba(205, 172, 105, 0.4);
+
+    --background: #0a0a0a;
+    --foreground: #ffffff;
+    --card: #121212;
+    --primary: #50ced4;
+    --secondary: #111111;
+    --muted: #1c1c1c;
+    --border: rgba(255, 255, 255, 0.08);
+    --radius: 0.125rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: white;
+    font-family: 'Manrope', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: -0.02em;
+}
+
+/* ==================== BUTTONS ==================== */
+
+.btn-primary {
+    background-color: #50ced4;
+    color: black;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 0.125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #d4b77d;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 1px solid #50ced4;
+    color: #50ced4;
+    padding: 0.75rem 2rem;
+    border-radius: 0.125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-outline:hover {
+    background-color: #50ced4;
+    color: black;
+    transform: translateY(-2px);
+}
+
+.btn-ghost {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem 1rem;
+    border-radius: 0.125rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-ghost:hover {
+    color: #50ced4;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ==================== CARDS ==================== */
+
+.card-base {
+    background-color: #121212;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-base:hover {
+    border-color: rgba(205, 172, 105, 0.3);
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+}
+
+/* ==================== INPUTS ==================== */
+
+.input-base {
+    background-color: #1c1c1c;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 0.125rem;
+    width: 100%;
+    height: 3rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-base:focus {
+    outline: none;
+    border-color: rgba(205, 172, 105, 0.4);
+    box-shadow: 0 0 0 2px rgba(205, 172, 105, 0.1);
+}
+
+.input-base::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+textarea.input-base {
+    height: auto;
+    resize: vertical;
+}
+
+/* ==================== NAVIGATION ==================== */
+
+.nav-link {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #50ced4;
+}
+
+/* ==================== ADMIN SIDEBAR ==================== */
+
+.admin-sidebar {
+    background: #0a0a0a;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-nav-item {
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.admin-nav-item:hover {
+    background: rgba(205, 172, 105, 0.1);
+}
+
+.admin-nav-item.active {
+    background: rgba(205, 172, 105, 0.15);
+    border-left: 3px solid #50ced4;
+}
+
+/* ==================== TABLES ==================== */
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th {
+    text-align: left;
+    padding: 1rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.data-table td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.data-table tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* ==================== BADGES ==================== */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 2px;
+}
+
+.badge-gold {
+    background: rgba(205, 172, 105, 0.15);
+    color: #50ced4;
+    border: 1px solid rgba(205, 172, 105, 0.3);
+}
+
+.badge-success {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-warning {
+    background: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+/* ==================== SPINNER ==================== */
+
+.spinner {
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top-color: #50ced4;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ==================== COUNTDOWN ==================== */
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: rgba(205, 172, 105, 0.1);
+    border: 1px solid rgba(205, 172, 105, 0.2);
+}
+
+.countdown-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #50ced4;
+    line-height: 1;
+}
+
+.countdown-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 0.5rem;
+}
+
+/* ==================== PROSE ==================== */
+
+.prose {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.prose h1, .prose h2, .prose h3 {
+    color: white;
+    font-family: 'Playfair Display', serif;
+}
+
+.prose a { color: #50ced4; }
+.prose strong { color: white; }
+
+/* ==================== ANIMATIONS ==================== */
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-up { animation: fadeUp 0.6s ease-out forwards; }
+.animate-fade-in { animation: fadeIn 0.6s ease-out forwards; }
+.animate-scale-in { animation: scaleIn 0.4s ease-out forwards; }
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+
+/* ==================== CUSTOM SCROLLBAR ==================== */
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #50ced4; }
+
+::selection { background: rgba(205, 172, 105, 0.3); color: white; }
+
+/* ==================== NAV ACTIVE ==================== */
+
+.nav-active {
+    color: #50ced4 !important;
+    position: relative;
+}
+
+.nav-active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #50ced4;
+}
+
+/* ==================== GLASS EFFECT ==================== */
+
+.glass-effect {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* ==================== TABS (custom) ==================== */
+
+.tabs-list {
+    display: flex;
+    background-color: #1c1c1c;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 4px;
+    gap: 4px;
+}
+
+.tabs-trigger {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tabs-trigger:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tabs-trigger.active {
+    background: rgba(205, 172, 105, 0.15);
+    color: #50ced4;
+}
+
+/* ==================== SWITCH (custom) ==================== */
+
+.switch {
+    width: 48px;
+    height: 26px;
+    background: #333;
+    border-radius: 13px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.switch.on {
+    background: #50ced4;
+}
+
+.switch-thumb {
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    transition: transform 0.2s ease;
+}
+
+.switch.on .switch-thumb {
+    transform: translateX(22px);
+}
+
+/* ==================== MODAL (custom) ==================== */
+
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.modal-content {
+    background: #1c1c1c;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.25rem;
+    width: 100%;
+    max-width: 32rem;
+    padding: 1.5rem;
+    position: relative;
+}
+
+.modal-content-lg {
+    max-width: 56rem;
+}

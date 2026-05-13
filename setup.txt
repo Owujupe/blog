@@ -1,0 +1,86 @@
+GLA Revamp - Laravel/Inertia Setup Guide
+========================================
+
+Follow these steps to set up and run the Laravel application:
+
+1. Prerequisite
+---------------
+Ensure you have PHP (>= 8.2), Composer, and Node.js (>= 18) installed on your machine.
+
+2. Installation
+---------------
+Navigate to the `laravel-app` directory and install dependencies:
+
+```bash
+composer install
+npm install
+```
+
+3. Environment Configuration
+----------------------------
+Copy the `.env.example` to `.env`:
+
+```bash
+cp .env.example .env
+```
+
+Open `.env` and configure your database and Paystack keys:
+- `DB_CONNECTION`: (e.g., sqlite, mysql)
+- `PAYSTACK_PUBLIC_KEY`: Your Paystack public key
+- `PAYSTACK_SECRET_KEY`: Your Paystack secret key
+
+Generate the application key:
+```bash
+php artisan key:generate
+```
+
+4. Database Setup
+-----------------
+Run migrations and seed the initial admin account and site settings:
+
+```bash
+php artisan migrate --seed
+```
+
+This will create an admin account:
+- Email: admin@gla.org
+- Password: password (You should change this after login)
+
+5. Storage Link
+---------------
+Link the storage directory to make uploads publicly accessible:
+
+```bash
+php artisan storage:link
+```
+
+6. Running the Application
+--------------------------
+Start the development server:
+
+```bash
+php artisan serve
+```
+
+In a separate terminal, start the Vite dev server for the frontend:
+
+```bash
+npm run dev
+```
+
+7. Accessing the App
+--------------------
+- Frontend: http://localhost:8000
+- Admin Dashboard: http://localhost:8000/admin
+
+8. Key Functionalities Replicated
+---------------------------------
+- Blog Posts with Featured Images
+- Sermon Video Management (YouTube embeds)
+- Events with Date/Time and Banners
+- Image Gallery with Categories
+- Livestream Toggle for Homepage
+- Prayer Request Management
+- Contact Form & Message Management
+- Paystack Giving Integration (Tithe, Offering, Benevolent)
+- Admin CMS with Stats and Dashboard
