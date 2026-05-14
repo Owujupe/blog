@@ -6,7 +6,7 @@ import axios from 'axios';
 import { Play, Calendar, Clock, MapPin, ArrowRight, Send } from 'lucide-react';
 import PublicLayout from './Layouts/PublicLayout';
 
-const HERO_IMAGE = "https://owujupe.com/assets/images/community/awardee.jpg";
+const HERO_IMAGE = "https://gjonas.owujupe.com/img/start.jpeg";
 
 function formatDate(date) {
   if (!date) return '';
