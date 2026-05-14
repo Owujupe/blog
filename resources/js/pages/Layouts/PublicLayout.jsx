@@ -3,7 +3,7 @@ import { Link, usePage } from '@inertiajs/react';
 import { Menu, X, MapPin, Phone, Mail, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const LOGO_URL = "https://wujupay.ca/assets/images/wujupay_logo.png";
+const LOGO_URL = "https://wujupay.ca/assets/images/pingg-removebg-preview.png";
 
 const navLinks = [
   { name: 'Home', path: '/' },

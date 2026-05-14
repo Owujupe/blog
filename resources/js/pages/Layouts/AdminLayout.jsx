@@ -16,7 +16,7 @@ import {
   DollarSign,
 } from 'lucide-react';
 
-const LOGO_URL = "https://customer-assets.emergentagent.com/job_church-builder-2/artifacts/kaahz5zg_image.png";
+const LOGO_URL = "https://wujupay.ca/assets/images/pingg-removebg-preview.png";
 
 const navItems = [
   { name: 'Dashboard', path: '/admin/dashboard', icon: LayoutDashboard },
