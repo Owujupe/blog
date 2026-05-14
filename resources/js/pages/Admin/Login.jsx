@@ -5,7 +5,7 @@ import { Mail, Lock, Eye, EyeOff } from 'lucide-react';
 import { toast } from 'sonner';
 import axios from 'axios';
 
-const LOGO_URL = "https://customer-assets.emergentagent.com/job_church-builder-2/artifacts/kaahz5zg_image.png";
+const LOGO_URL = "https://wujupay.ca/assets/images/pingg-removebg-preview.png";
 
 export default function AdminLogin() {
   const [email, setEmail] = useState('');
